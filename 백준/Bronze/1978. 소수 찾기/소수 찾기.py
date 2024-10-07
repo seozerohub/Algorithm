@@ -1,13 +1,16 @@
 n = int(input())
-data = list(map(int, input().split()))
-count = 0
+nlist = list(map(int, input().split()))
 
-for x in data:
-  for i in range(2, x+1):
-    if x % i == 0:
-      if x == i:
-        count += 1
-      
-      break
+alist = []
+for a in nlist:
+    p = True
+    if a<2:
+        p = False
+    else:
+        for i in range(2,a):
+            if a%i==0:
+                p = False
+        if p:
+            alist.append(a)
 
-print(count)
+print(len(alist))
